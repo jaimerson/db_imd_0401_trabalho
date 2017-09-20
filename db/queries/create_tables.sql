@@ -3,7 +3,7 @@ CREATE TYPE ESPECIALIDADE AS ENUM ('jardineiro', 'hortelão', 'agrônomo');
 CREATE TABLE trabalhador(
   id_trabalhador SERIAL,
   nome VARCHAR(255) NOT NULL,
-  dataNascimento DATE NOT NULL,
+  data_nascimento DATE NOT NULL,
   especialidade ESPECIALIDADE NOT NULL,
 
   PRIMARY KEY(id_trabalhador)
