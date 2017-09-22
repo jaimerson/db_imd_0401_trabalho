@@ -32,9 +32,9 @@ CREATE TABLE venda(
   id_comprador INTEGER REFERENCES comprador(id_comprador) NOT NULL,
   id_produto INTEGER REFERENCES produto(id_produto) NOT NULL,
   data_venda DATE NOT NULL,
-  quantidate INTEGER NOT NULL,
+  quantidade INTEGER NOT NULL,
   valor MONEY NOT NULL,
-  data_recebimento DATE NOT NULL,
+  data_recebimento DATE,
 
   PRIMARY KEY(id_venda)
 );

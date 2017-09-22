@@ -75,3 +75,23 @@ INSERT INTO comprador (nome_comprador, telefone_comprador, cidade_comprador) VAL
   ('Root Beer Guy','07488887741','Natal'),
   ('Tiffany','0848888774','Moscow')
 ;
+
+WITH datas AS (
+  SELECT
+    generate_series('2017-01-01 00:00'::timestamp, current_date, '10 days') AS data_venda,
+    generate_series('2017-01-01 00:00'::timestamp, current_date, '10 days') AS data_recebimento
+  )
+INSERT INTO venda (id_comprador, id_produto, data_venda, data_recebimento, quantidade, valor)
+  SELECT DISTINCT ON (id_comprador, id_produto)
+    id_comprador,
+    id_produto,
+    datas.data_venda,
+    datas.data_recebimento,
+    RANDOM() * 200,
+    (RANDOM() * 1000)::numeric::money
+  FROM datas CROSS JOIN comprador CROSS JOIN produto;
+;
+
+UPDATE venda SET data_recebimento = NULL WHERE id_venda IN (
+  SELECT id_venda FROM venda ORDER BY RANDOM() LIMIT 50
+);
