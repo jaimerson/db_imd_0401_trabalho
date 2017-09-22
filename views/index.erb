@@ -1,0 +1,19 @@
+<% report.items.each do |key, result| %>
+  <h2><%= key %></h2>
+  <table>
+    <thead>
+      <% result.first.keys.each do |header| %>
+        <th><%= header %></th>
+      <% end %>
+    </thead>
+    <tbody>
+      <% result.each do |row| %>
+        <tr>
+          <% row.values.each do |value| %>
+            <td><%= value %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
