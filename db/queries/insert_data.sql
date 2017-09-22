@@ -97,3 +97,6 @@ INSERT INTO venda (id_comprador, id_produto, data_venda, data_recebimento, quant
 UPDATE venda SET data_recebimento = NULL WHERE id_venda IN (
   SELECT id_venda FROM venda ORDER BY RANDOM() LIMIT 50
 );
+
+-- Para a última questão
+DELETE FROM venda WHERE id_produto = (SELECT MAX(id_produto) FROM produto);

@@ -53,6 +53,25 @@ class Report
   produto.
   DESCRIPTION
 
+  item 'products_area', description: <<-DESCRIPTION
+  Selecionar a área total de todos os produtos, a área média e a quantidade de produtos
+  cadastrados
+  DESCRIPTION
+
+  item 'unpaid_products', description: <<-DESCRIPTION
+  Para cada produto vendido e não pago, selecionar a descrição, o número de vendas a
+  receber e o montante a receber por produto.
+  DESCRIPTION
+
+  item 'unpaid_sales_with_fine', description: <<-DESCRIPTION
+  Para cada venda efetuada e não paga, selecionar a descrição do produto, o valor da
+  venda, o imposto a pagar (5%), a data da venda e o número de dias de atraso.
+  DESCRIPTION
+
+  item 'unsold_products', description: <<-DESCRIPTION
+  Selecione todos os produtos que nunca foram vendidos. Use EXISTS para tal.
+  DESCRIPTION
+
   attr_reader :connection
 
   def initialize(connection)
