@@ -59,13 +59,11 @@ class Report
     @connection = connection
   end
 
-  def items
-    self.class.items.reduce({}) do |result, item|
-      result[item.description] = item.execute(connection)
-      result
+  def each_item
+    self.class.items.each do |item|
+      yield item.description, item.execute(connection), item.query
     end
   end
-
 end
 
 get '/' do
