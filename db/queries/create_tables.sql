@@ -11,8 +11,8 @@ CREATE TABLE trabalhador(
 
 CREATE TABLE produto(
   id_produto SERIAL,
-  descricao TEXT NOT NULL,
-  areaPlantada NUMERIC NOT NULL,
+  descricao TEXT UNIQUE NOT NULL,
+  area_plantada NUMERIC NOT NULL,
   id_trabalhador INTEGER REFERENCES trabalhador(id_trabalhador) NOT NULL,
 
   PRIMARY KEY(id_produto)

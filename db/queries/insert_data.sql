@@ -63,3 +63,12 @@ INSERT INTO trabalhador (nome, data_nascimento, especialidade) VALUES
   ('T.V.','01/07/1964','agrônomo'),
   ('Viola','01/07/1964','agrônomo')
 ;
+
+INSERT INTO produto (descricao, area_plantada, id_trabalhador) VALUES
+  ('rosa', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
+  ('milho', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
+  ('cominho', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
+  ('pimenta', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
+  ('batata doce', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
+  ('feijão', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1))
+;
