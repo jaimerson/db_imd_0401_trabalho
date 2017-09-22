@@ -1,5 +1,6 @@
 <% report.items.each do |key, result| %>
-  <h2><%= key %></h2>
+  <% next unless result.any? %>
+  <p><strong><%= key %></strong></p>
   <table>
     <thead>
       <% result.first.keys.each do |header| %>

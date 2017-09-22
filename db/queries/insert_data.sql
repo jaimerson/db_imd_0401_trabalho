@@ -1,5 +1,5 @@
 INSERT INTO trabalhador (nome, data_nascimento, especialidade) VALUES
-  ('Abracadaniel','01/07/1985','jardineiro'),
+  ('Abracadaniel','01/07/1685','jardineiro'),
   ('Ancient Sleeping Magi of Life Giving','01/07/1985','jardineiro'),
   ('Banana Man','01/07/1985','jardineiro'),
   ('Betty Grof','01/07/1985','jardineiro'),
@@ -14,9 +14,9 @@ INSERT INTO trabalhador (nome, data_nascimento, especialidade) VALUES
   ('Cosmic Owl','01/07/1999','hortelão'),
   ('Crunchy','01/07/1999','hortelão'),
   ('Cuber','01/07/1999','hortelão'),
-  ('Hunson Abadeer','01/07/1964','agrônomo'),
+  ('Hunson Abadeer','01/07/1994','agrônomo'),
   ('Jake Jr.','01/07/1964','agrônomo'),
-  ('Jermaine','01/07/1964','agrônomo'),
+  ('Jermaine','01/07/1995','agrônomo'),
   ('Joshua','01/07/1964','agrônomo'),
   ('Kim Kil Whan','01/07/1964','agrônomo'),
   ('King of Ooo','01/07/1964','agrônomo'),
@@ -88,7 +88,7 @@ INSERT INTO venda (id_comprador, id_produto, data_venda, data_recebimento, quant
     datas.data_venda,
     datas.data_recebimento,
     RANDOM() * 200,
-    (RANDOM() * 1000)::numeric::money
+    (RANDOM() * 100000)::numeric::money
   FROM datas CROSS JOIN comprador CROSS JOIN produto;
 ;
 
