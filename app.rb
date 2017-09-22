@@ -30,6 +30,22 @@ class Report
   01/01/1980 e 01/01/2000.
   DESCRIPTION
 
+  item 'unpaid_sales', description: <<-DESCRIPTION
+  Selecionar os valores das vendas que não estão pagas e os nomes dos respectivos
+  compradores.
+  DESCRIPTION
+
+  item 'products_and_workers', description: <<-DESCRIPTION
+  Para cada produto, selecionar a descrição, a área, o nome e a especialidade do
+  trabalhador responsável. Para esse item, use produto cartesiano e junção (uma consulta
+  para cada).
+  DESCRIPTION
+
+  item 'sold_products', description: <<-DESCRIPTION
+  Selecionar a descrição dos produtos que já tenham sido vendidos, e o nome e a
+  especialidade dos respectivos responsáveis.
+  DESCRIPTION
+
   attr_reader :connection
 
   def initialize(connection)
