@@ -37,6 +37,8 @@ INSERT INTO produto (descricao, area_plantada, id_trabalhador) VALUES
   ('cominho', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
   ('pimenta', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
   ('batata doce', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1)),
+  ('arroz', random() * 10000, (SELECT MIN(id_trabalhador) FROM trabalhador LIMIT 1)),
+  ('macaxeira', random() * 10000, (SELECT MIN(id_trabalhador) FROM trabalhador LIMIT 1)),
   ('feijão', random() * 10000, (SELECT id_trabalhador FROM trabalhador ORDER BY RANDOM() LIMIT 1))
 ;
 

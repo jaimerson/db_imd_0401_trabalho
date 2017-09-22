@@ -46,6 +46,13 @@ class Report
   especialidade dos respectivos responsáveis.
   DESCRIPTION
 
+  item 'products_ordered', description: <<-DESCRIPTION
+  Para cada produto, selecionar a descrição, área, id do trabalhador, nome e
+  especialidade do respectivo responsável. Contudo, o resultado deve ser apresentado em
+  ordem decrescente do id do trabalhador e em ordem crescente da área plantada do
+  produto.
+  DESCRIPTION
+
   attr_reader :connection
 
   def initialize(connection)
